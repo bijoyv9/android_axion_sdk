@@ -33,6 +33,7 @@ import androidx.compose.foundation.gestures.animateTo
 import androidx.compose.foundation.gestures.snapTo
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
@@ -142,7 +143,7 @@ fun BottomSheetDialog(
                 .collect { onDismiss() }
         }
 
-        BoxWithConstraints {
+        BoxWithConstraints(contentAlignment = Alignment.BottomCenter) {
             val maxHeightMod = if (heightFraction > 0f) {
                 Modifier.heightIn(max = maxHeight * heightFraction)
             } else {
